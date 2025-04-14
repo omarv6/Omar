@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta Especial</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #d6336c;
+    }
+
+    .btn-container {
+      margin-top: 30px;
+      position: relative;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #6f42c1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¿Quieres salir conmigo esta noche? 💕</h1>
+
+  <div class="btn-container">
+    <button id="yesBtn">Sí 🥰</button>
+    <button id="noBtn">No 😢</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const message = document.getElementById('message');
+
+    yesBtn.addEventListener('click', () => {
+      message.textContent = '¡Sabía que dirías que sí! 💖';
+    });
+
+    noBtn.addEventListener('mouseover', () => {
+      const i = Math.floor(Math.random() * 300);
+      const j = Math.floor(Math.random() * 300);
+      noBtn.style.top = `${i}px`;
+      noBtn.style.left = `${j}px`;
+    });
+  </script>
+
+</body>
+</html>
